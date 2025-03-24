@@ -7,7 +7,6 @@ import { VelocityScroll } from "@/components/magicui/scroll-based-velocity";
 import Navbar from "@/components/Navbar";
 import No from "@/components/No";
 import { ScrollBasedVelocityDemo } from "@/components/ScrollBasedVelocityDemo";
-import ScrollToUnlock from "@/components/ScrollToUnlock";
 import { StickyScrollRevealDemo } from "@/components/StickyScrollRevealDemo";
 import Team from "@/components/Team";
 import { CarouselDemo } from "@/components/Testimonials";
