@@ -1,3 +1,5 @@
+'use client'
+
 import { AnimatedTestimonialsDemo } from "@/components/AnimatedTestimonialsDemo";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
@@ -6,6 +8,7 @@ import Hero from "@/components/Hero";
 import { VelocityScroll } from "@/components/magicui/scroll-based-velocity";
 import Navbar from "@/components/Navbar";
 import No from "@/components/No";
+import Preloader from "@/components/PreLoader";
 import { ScrollBasedVelocityDemo } from "@/components/ScrollBasedVelocityDemo";
 import { StickyScrollRevealDemo } from "@/components/StickyScrollRevealDemo";
 import Team from "@/components/Team";
@@ -14,10 +17,18 @@ import { Button } from "@/components/ui/button";
 import { StickyScroll } from "@/components/ui/sticky-scroll-reveal";
 import Works from "@/components/Works";
 import Image from "next/image";
+import {useState} from 'react';
 
 export default function Home() {
+  const [showContent, setShowContent] = useState(false);
+
   return (
 <div>
+{!showContent && <Preloader onComplete={() => setShowContent(true)} />}
+      
+      <div className={`transition-opacity duration-1000 ${showContent ? "opacity-100" : "opacity-0"}`}>
+        {/* Your Main Website Content */}
+        <div>
 <Hero/>
 <AnimatedTestimonialsDemo />
 <No/>
@@ -39,6 +50,8 @@ export default function Home() {
     </div>
     <Contact/>
     <Footer/>
+    </div>
+    </div>
 </div>
   );
 }
